@@ -1,14 +1,19 @@
 {
-  "name": "chat-application",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Patrick",
-  "license": "ISC",
-  "dependencies": {
-    "socket.io": "^2.3.0"
-  }
+    "name": "chat-application",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "devStart": "nodemon src/server.js",
+        "startServing": "serve ./src/assets",
+        "start": " npm run startServing && npm run devStart"
+    },
+    "author": "Patrick",
+    "license": "ISC",
+    "dependencies": {
+        "socket.io": "^2.3.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
 }

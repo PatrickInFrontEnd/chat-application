@@ -1,4 +1,4 @@
-const socket = io("http://192.168.1.12:3000", { forceNew: true });
+const socket = io("http://192.168.55.103:5000", { forceNew: true });
 
 const d = document;
 const chatContainer = d.querySelector(".messages-container");

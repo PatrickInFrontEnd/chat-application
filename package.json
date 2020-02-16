@@ -4,9 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "devStart": "nodemon src/server.js",
-        "startServing": "serve ./src/assets",
-        "start": " npm run startServing && npm run devStart"
+        "serveServer": "nodemon src/server.js",
+        "serveApp": "serve ./src/assets",
+        "start": " npm run serveApp && npm run serveServer"
     },
     "author": "Patrick",
     "license": "ISC",

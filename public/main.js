@@ -58,10 +58,10 @@ function initializeChat(name) {
     });
 
     socket.on("user-disconnected", (name) => {
-        let msg = `An user has left the chat.`;
-        if (name) {
-            msg = `An user called ${name} has left the chat.`;
-        }
+        if (!name) return;
+
+        const msg = `An user called ${name} has left the chat.`;
+
         addNotification(msg);
     });
 

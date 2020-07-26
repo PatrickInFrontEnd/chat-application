@@ -65,6 +65,7 @@ function initializeChat(name) {
     messageForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const { value: message } = messageInput;
+        if (!message) return;
 
         socket.emit("send-chat-message", message);
         appendMessage(message, name);

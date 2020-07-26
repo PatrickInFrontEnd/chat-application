@@ -52,8 +52,8 @@ body {
     max-width: 300px;
     min-height: 30px;
     padding: 10px 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #54a0ff;
     border-radius: 20px;
     text-align: justify;
@@ -84,8 +84,15 @@ body {
 .message__container--notification p {
     color: #fff;
     font-size: 16px;
-    text-align: justify;
-    height: 100%;
+    text-align: left;
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 .message__container--sender p.nick,
@@ -94,13 +101,11 @@ body {
     position: absolute;
     background-color: #000;
     color: #fff;
-    width: fit-content;
     min-width: 50px;
     max-width: 150px;
-    height: fit-content;
     min-height: 10px;
-    max-height: 100px;
-    padding: 5px 10px;
+    max-height: 50px;
+    padding: 5px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -178,39 +183,7 @@ body {
     }
 }
 
-@media only screen and (max-height: 750px) and (max-width: 500px) {
-    .welcome {
-        height: 15%;
-        overflow: hidden;
-        font-size: 18px;
-    }
-
-    .messages-container {
-        height: 70%;
-    }
-
-    .message__container--me,
-    .message__container--sender,
-    .message__container--notification {
-        max-width: 200px;
-        padding: 10px;
-    }
-
-    .message__container--me p,
-    .message__container--sender p,
-    .message__container--notification p {
-        font-size: 14px;
-        -ms-word-break: break-all;
-        word-break: break-all;
-
-        /* Non standard for WebKit */
-        word-break: break-word;
-
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        hyphens: auto;
-    }
-
+@media screen and (max-width: 500px) {
     .message__container--me {
         margin-right: 10px;
     }
@@ -221,6 +194,54 @@ body {
 
     .message__container--notification {
         margin: 10px 10px 10px auto;
+    }
+
+    .message__container--me,
+    .message__container--sender,
+    .message__container--notification {
+        margin-bottom: 80px;
+    }
+
+    .message__container--notification p.nick {
+        bottom: 0;
+        right: 60%;
+        transform: translate(50%, 120%);
+    }
+
+    .message__container--sender p.nick {
+        bottom: 0;
+        left: 20%;
+        transform: translate(-70%, 120%);
+    }
+    .message__container--me p.nick {
+        bottom: 0;
+        right: 20%;
+        transform: translate(70%, 120%);
+    }
+}
+
+@media screen and (max-height: 750px) and (max-width: 500px) {
+    .welcome {
+        height: 15%;
+        overflow: auto;
+        font-size: 18px;
+    }
+
+    .messages-container {
+        height: 70%;
+    }
+
+    .message__container--me,
+    .message__container--sender,
+    .message__container--notification {
+        max-width: calc(100% - 60px);
+        padding: 20px;
+    }
+
+    .message__container--me p,
+    .message__container--sender p,
+    .message__container--notification p {
+        font-size: 14px;
     }
 
     .message__container--sender p.nick {
@@ -249,6 +270,15 @@ body {
         width: 60%;
         height: 80%;
         max-width: calc(100%-10px);
+    }
+}
+
+@media screen and (min-height: 750px) and (max-width: 500px) {
+    .message__container--me,
+    .message__container--sender,
+    .message__container--notification {
+        max-width: 200px;
+        padding: 10px;
     }
 }
 
@@ -303,6 +333,12 @@ body {
     font-size: 20px;
     color: #fff;
     background-color: #db3535;
+}
+
+@media screen and (min-height: 750px) and (max-width: 330px) {
+    button#send-name {
+        margin: 10px 0 0 25px;
+    }
 }
 
 @media screen and (max-width: 470px) {

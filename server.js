@@ -1,14 +1,28 @@
-const path = require("path");
+const cors = require("cors");
+const bodyparser = require("body-parser");
+const enforce = require("express-sslify");
 const http = require("http");
+const path = require("path");
 const express = require("express");
 const socketio = require("socket.io");
 const { initializeListeners } = require("./server.utils");
 
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
 const app = express();
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(cors());
+
+if (process.env.NODE_ENV === "production") {
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
+app.use(express.static(path.resolve(__dirname, "public"), { root: __dirname }));
+
 const server = http.createServer(app);
 const io = socketio(server);
-
-app.use(express.static(path.resolve(__dirname, "public")));
 
 const users = {};
 const userNames = {};

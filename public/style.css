@@ -305,6 +305,20 @@ body {
     background-color: #db3535;
 }
 
+@media screen and (max-width: 470px) {
+    .errorMessage {
+        font-size: 16px;
+        text-align: justify;
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .errorMessage {
+        font-size: 14px;
+    }
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(120%);

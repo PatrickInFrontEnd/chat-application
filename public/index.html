@@ -9,7 +9,12 @@
     </head>
     <body>
         <div class="wrapper">
-            <header class="welcome"></header>
+            <header class="welcome">
+                <form id="nameForm">
+                    Name : <input type="text" id="name" maxlength="20" />
+                    <button type="submit" id="send-name">Join chat</button>
+                </form>
+            </header>
             <div class="messages-container"></div>
             <div class="input-data">
                 <form id="message-form">
@@ -18,10 +23,8 @@
                 </form>
             </div>
         </div>
-        <script
-            defer
-            src="http://192.168.55.103:3000/socket.io/socket.io.js"
-        ></script>
-        <script defer src="main.js"></script>
+        <div class="errorMessage"></div>
+        <script defer src="./socket.io/socket.io.js"></script>
+        <script defer src="./main.js"></script>
     </body>
 </html>

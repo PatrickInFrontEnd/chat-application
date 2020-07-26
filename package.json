@@ -4,13 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "serveServer": "nodemon src/server.js",
-        "serveApp": "serve ./src/assets",
-        "start": " npm run serveApp && npm run serveServer"
+        "dev": "nodemon server",
+        "start": "node server"
     },
     "author": "Patrick",
     "license": "ISC",
     "dependencies": {
+        "express": "^4.17.1",
         "socket.io": "^2.3.0"
     },
     "devDependencies": {

@@ -363,3 +363,22 @@ body {
         transform: translateX(0);
     }
 }
+
+footer.footer {
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer.footer a {
+    display: block;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #fff;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}

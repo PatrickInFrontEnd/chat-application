@@ -70,7 +70,7 @@ body {
 }
 
 .message__container--sender {
-    background-color: rgb(156, 155, 155);
+    background-color: rgb(95, 95, 95);
     margin-left: 30px;
 }
 
@@ -148,6 +148,10 @@ body {
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+#send-message:disabled {
+    background-color: #919191;
 }
 
 #message-form {
@@ -267,10 +271,45 @@ body {
     }
 }
 
-/* {
-    #message-data {
-        width: 60%;
-        height: 80%;
-        max-width: calc(100%-10px);
+#name {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#send-name {
+    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+#send-name:disabled {
+    background-color: #919191;
+}
+
+.errorMessage {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    transform: translateX(120%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #db3535;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
     }
-} */
+    to {
+        transform: translateX(0);
+    }
+}

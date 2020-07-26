@@ -144,6 +144,7 @@ body {
     margin-right: 10px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: #fff;
+    resize: none;
 }
 #send-message {
     padding: 10px 15px;
